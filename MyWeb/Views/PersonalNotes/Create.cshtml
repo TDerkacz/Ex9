@@ -1,0 +1,31 @@
+﻿@model PersonalNote
+
+@{
+    ViewBag.Title = "Create note";
+    Layout = "_Layout";
+}
+
+<h2>Create note</h2>
+<form asp-antiforgery="true" asp-action="Create" method="post">
+    <div>
+        <label asp-for="Content">Content</label>
+        <input asp-for="Content" type="text" />
+        <span asp-validation-for="Content"></span>
+    </div>
+
+    <div>
+        <label asp-for="DueDate">Due date</label>
+        <input asp-for="DueDate" type="date" />
+        <span asp-validation-for="DueDate"></span>
+    </div>
+
+    <div>
+        <label asp-for="Priority">Priority</label>
+        <input asp-for="Priority" type="number" />
+        <span asp-validation-for="Priority"></span>
+    </div>
+    
+    <button type="submit">Create</button>
+</form>
+
+<a asp-action="Index">Back</a>

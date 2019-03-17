@@ -1,0 +1,14 @@
+﻿@model PersonalNote
+
+@{
+    ViewBag.Title = $"{Model.Id} details";
+    Layout = "_Layout";
+}
+
+<h2>Note @Model.Id</h2>
+<p>Content: @Model.Content</p>
+<p>Priority: @Model.Priority</p>
+<p>Due date: @Model.DueDate</p>
+<a asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+
+<a asp-action="Index">Back</a>

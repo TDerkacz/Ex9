@@ -1,0 +1,22 @@
+﻿@model IList<PersonalNote>
+
+@{
+    ViewBag.Title = "Personal Notes";
+    Layout = "_Layout";
+}
+
+<h2>Notes</h2>
+<a asp-action="Create">Create note</a>
+<ul>
+    @foreach (var note in Model)
+    {
+        <li>
+            <p>
+                <a asp-action="Details" asp-route-id="@note.Id" >Id: @note.Id</a>
+            </p>
+            <p>Content: @note.Content</p>
+            <p>Priority: @note.Priority</p>
+            <p>Due date: @note.DueDate</p>
+        </li>
+    }
+</ul>

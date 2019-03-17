@@ -1,0 +1,36 @@
+﻿@model ContactPageModel;
+
+@{
+    ViewData["Title"] = "Contact";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+@{
+    var foo = "Hello from razor!!";
+}
+
+<h2>@Model.TeamName</h2>
+
+<address>
+    @Model.Contact.Street<br />
+    @Model.Contact.City, @Model.Contact.State @Model.Contact.PostCode<br />
+    <abbr title="Phone">P:</abbr>
+
+    <ul>
+        @foreach (var number in Model.Contact.PhoneNumbers)
+        {
+            <li>@number</li>
+        }
+    </ul>
+</address>
+
+<p>foo: @foo</p>
+
+<address>
+    @foreach (var emailAddress in Model.EmailAddresses)
+    {
+        <strong>@emailAddress.DepartmentName</strong> 
+        <a href="mailto:@emailAddress.Email">@emailAddress.Email</a><br/>
+    }
+</address>

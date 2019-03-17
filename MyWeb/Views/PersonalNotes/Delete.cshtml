@@ -1,0 +1,20 @@
+﻿@model PersonalNote
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Note @Model.Id</h2>
+<p>Content: @Model.Content</p>
+<p>Priority: @Model.Priority</p>
+<p>Due date: @Model.DueDate</p>
+
+Delete?
+
+<form asp-action="Delete" method="post" asp-antiforgery="true" asp-route-id="@Model.Id">
+<button type="submit">Yes</button>
+<button asp-action="Index">No</button>
+</form>
+
+<h2>Delete</h2>
+
